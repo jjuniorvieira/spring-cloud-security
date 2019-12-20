@@ -14,7 +14,7 @@ import java.util.List;
 
 @ApiModel(description="All details about the user.")
 @Entity
-public class User {
+public class User  {
 
 	@Id
 	@GeneratedValue
