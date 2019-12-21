@@ -51,11 +51,7 @@ public class UserResource {
 		User savedUser = service.save(user);
 		// CREATED
 		// /user/{id}     savedUser.getId()
-
-		URI location = ServletUriComponentsBuilder
-			.fromCurrentRequest()
-			.path("/{id}")
-			.buildAndExpand(savedUser.getId()).toUri();
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedUser.getId()).toUri();
 
 		return ResponseEntity.created(location).build();
 
