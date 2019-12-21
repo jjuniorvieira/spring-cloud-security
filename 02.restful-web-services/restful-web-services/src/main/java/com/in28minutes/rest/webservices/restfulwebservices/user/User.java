@@ -20,12 +20,12 @@ public class User  {
 	@GeneratedValue
 	private Integer id;
 
-	@Size(min=2, message="Name should have atleast 2 characters")
-	@ApiModelProperty(notes="Name should have atleast 2 characters")
+	@Size(min=2, message="Name should have at least 2 characters") //validations
+	@ApiModelProperty(notes="Name should have at least 2 characters")
 	private String name;
 
 	@Past
-	@ApiModelProperty(notes="Birth date should be in the past")
+	@ApiModelProperty(notes="Birth date should be in the past") // validations date
 	private Date birthDate;
 	
 	@OneToMany(mappedBy="user")

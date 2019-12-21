@@ -43,11 +43,8 @@ public class UserResource {
 	//
 	// input - details of user
 	// output - CREATED & Return the created URI
-
-	//HATEOAS
-
 	@PostMapping("/users")
-	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
+	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) { //validations
 		User savedUser = service.save(user);
 		// CREATED
 		// /user/{id}     savedUser.getId()
