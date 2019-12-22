@@ -23,11 +23,12 @@ public class RestfulWebServicesApplication {
 		return localeResolver;
 	}
 
-	@Bean
-	public ResourceBundleMessageSource bundleMessageSource(){
-		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-		messageSource.setBasename("messages");
-		return messageSource;
-	}
+// we dont need this code because we have this attribute in the properties -> spring.messages.basename=messages
+//	@Bean
+//	public ResourceBundleMessageSource bundleMessageSource(){
+//		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+//		messageSource.setBasename("messages");
+//		return messageSource;
+//	}
 
 }
