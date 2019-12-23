@@ -21,11 +21,11 @@ public class User  {
 	private Integer id;
 
 	@Size(min=2, message="Name should have at least 2 characters") //validations
-	@ApiModelProperty(notes="Name should have at least 2 characters")
+	@ApiModelProperty(notes="Name should have at least 2 characters") //this information will be displayed in swagger-ui > definition > user > properties
 	private String name;
 
 	@Past
-	@ApiModelProperty(notes="Birth date should be in the past") // validations date
+	@ApiModelProperty(notes="Birth date should be in the past") //this information will be displayed in swagger-ui > definition > user > properties
 	private Date birthDate;
 	
 	@OneToMany(mappedBy="user")
