@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 public class FilteringController {
 
-	// field1,field2
+	// field1,field2 dynamic filtering
 	@GetMapping("/filtering")
 	public MappingJacksonValue retrieveSomeBean() {
 		SomeBean someBean = new SomeBean("value1", "value2", "value3");
@@ -30,7 +30,7 @@ public class FilteringController {
 		return mapping;
 	}
 
-	// field2, field3
+	// field2, field3 dynamic filtering
 	@GetMapping("/filtering-list")
 	public MappingJacksonValue retrieveListOfSomeBeans() {
 		List<SomeBean> list = Arrays.asList(new SomeBean("value1", "value2", "value3"),
