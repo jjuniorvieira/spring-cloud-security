@@ -49,17 +49,17 @@ public class UserJPAResource {
 		return resource;
 	}
 
+	//new section to update delete
 	@DeleteMapping("/jpa/users/{id}")
 	public void deleteUser(@PathVariable int id) {
 		userRepository.deleteById(id);
 	}
 
-	//
+
+	//new section to update post
 	// input - details of user
 	// output - CREATED & Return the created URI
-
 	// HATEOAS
-
 	@PostMapping("/jpa/users")
 	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
 		User savedUser = userRepository.save(user);
