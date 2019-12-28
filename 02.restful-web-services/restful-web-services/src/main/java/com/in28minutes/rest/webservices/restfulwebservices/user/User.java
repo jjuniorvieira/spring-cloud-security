@@ -27,7 +27,8 @@ public class User  {
 	@Past
 	@ApiModelProperty(notes="Birth date should be in the past") //this information will be displayed in swagger-ui > definition > user > properties
 	private Date birthDate;
-	
+
+	//one user (class where we are) to many post (the attribute)
 	@OneToMany(mappedBy="user")
 	private List<Post> posts;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
+//entity post
 @Entity
 public class Post {
 	
@@ -11,8 +12,9 @@ public class Post {
 	@GeneratedValue
 	private Integer id;
 	private String description;
-	
-	@ManyToOne(fetch= FetchType.LAZY)
+
+	//many post (class where we are) to one user (the attribute)
+	@ManyToOne(fetch= FetchType.LAZY) //this way not be retrieved the post details when user be called
 	@JsonIgnore
 	private User user;
 	
