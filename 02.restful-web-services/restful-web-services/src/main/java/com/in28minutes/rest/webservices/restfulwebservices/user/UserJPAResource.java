@@ -83,7 +83,7 @@ public class UserJPAResource {
 	}
 
 
-	@PostMapping("/jpa/users/{id}/posts")
+	@PostMapping("/jpa/users/{id}/posts") //adding a post to one specific user
 	public ResponseEntity<Object> createPost(@PathVariable int id, @RequestBody Post post) {
 		
 		Optional<User> userOptional = userRepository.findById(id);
@@ -99,7 +99,7 @@ public class UserJPAResource {
 		postRepository.save(post);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(post.getId())
-				.toUri();
+				.toUri(); //this information goes in the response header
 
 		return ResponseEntity.created(location).build();
 
