@@ -15,7 +15,7 @@ public class Post {
 
 	//many post (class where we are) to one user (the attribute)
 	@ManyToOne(fetch= FetchType.LAZY) //this way not be retrieved the post details when user be called
-	@JsonIgnore
+	@JsonIgnore //it is important to do not have a cyclic dependency
 	private User user;
 	
 	public Integer getId() {

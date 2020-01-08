@@ -71,7 +71,7 @@ public class UserJPAResource {
 
 	}
 	
-	@GetMapping("/jpa/users/{id}/posts")
+	@GetMapping("/jpa/users/{id}/posts") //using path variable
 	public List<Post> retrieveAllUsers(@PathVariable int id) {
 		Optional<User> userOptional = userRepository.findById(id);
 		
