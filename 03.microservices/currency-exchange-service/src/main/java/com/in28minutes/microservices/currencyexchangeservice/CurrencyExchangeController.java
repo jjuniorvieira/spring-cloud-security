@@ -23,18 +23,17 @@ public class CurrencyExchangeController {
 
 	@GetMapping("/currency-exchange/from/{from}/to/{to}")
 	public ExchangeValue retrieveExchangeValue
-		(@PathVariable String from, @PathVariable String to){
-//
-//		ExchangeValue exchangeValue =
-//				repository.findByFromAndTo(from, to);
-//
-//		exchangeValue.setPort(
-//				Integer.parseInt(environment.getProperty("local.server.port")));
-//
-//		logger.info("{}", exchangeValue);
-//
-//		return exchangeValue;
+			(@PathVariable String from, @PathVariable String to){
 
-		return new ExchangeValue(1000L, from, to, BigDecimal.valueOf(65));
+		ExchangeValue exchangeValue = new ExchangeValue(1000L, from, to, BigDecimal.valueOf(65));
+//			repository.findByFromAndTo(from, to);
+
+		exchangeValue.setPort(
+				Integer.parseInt(environment.getProperty("local.server.port")));
+
+		logger.info("{}", exchangeValue);
+
+		return exchangeValue;
+
 	}
 }
