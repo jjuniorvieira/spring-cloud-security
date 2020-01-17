@@ -26,9 +26,7 @@ public class CurrencyExchangeController {
 			(@PathVariable String from, @PathVariable String to){
 
 		ExchangeValue exchangeValue =  repository.findByFromAndTo(from, to);
-
-		exchangeValue.setPort(
-				Integer.parseInt(environment.getProperty("local.server.port")));
+		exchangeValue.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
 
 		logger.info("{}", exchangeValue);
 
