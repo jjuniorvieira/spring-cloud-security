@@ -26,21 +26,20 @@ public class CurrencyConversionController {
                                                   @PathVariable BigDecimal quantity) {
 
 //		// Feign - Problem 1
-//		Map<String, String> uriVariables = new HashMap<>();
-//		uriVariables.put("from", from);
-//		uriVariables.put("to", to);
-//
-//		ResponseEntity<CurrencyConversionBean> responseEntity = new RestTemplate().getForEntity(
-//				"http://localhost:8000/currency-exchange/from/{from}/to/{to}", CurrencyConversionBean.class,
-//				uriVariables);
-//
-//		CurrencyConversionBean response = responseEntity.getBody();
-//
-//		return new CurrencyConversionBean(response.getId(), from, to, response.getConversionMultiple(), quantity,
-//				quantity.multiply(response.getConversionMultiple()), response.getPort());
+		Map<String, String> uriVariables = new HashMap<>();
+		uriVariables.put("from", from);
+		uriVariables.put("to", to);
+
+		ResponseEntity<CurrencyConversionBean> responseEntity = new RestTemplate().getForEntity(
+				"http://localhost:8000/currency-exchange/from/{from}/to/{to}", CurrencyConversionBean.class,
+				uriVariables);
+
+		CurrencyConversionBean response = responseEntity.getBody();
+
+		return new CurrencyConversionBean(response.getId(), from, to, response.getConversionMultiple(), quantity,
+				quantity.multiply(response.getConversionMultiple()), response.getPort());
 
 
-		return new CurrencyConversionBean(1L, from, to, BigDecimal.ONE, quantity, quantity, 0);
 	}
 
 //	@GetMapping("/currency-converter-feign/from/{from}/to/{to}/quantity/{quantity}")
