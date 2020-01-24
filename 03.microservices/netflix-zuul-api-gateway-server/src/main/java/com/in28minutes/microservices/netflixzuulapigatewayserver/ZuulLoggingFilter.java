@@ -26,6 +26,9 @@ public class ZuulLoggingFilter extends ZuulFilter{
 				request, request.getRequestURI());
 		return null;
 	}
+	//result of that is
+	//URL: http://localhost:8765/currency-exchange-service/currency-exchange/from/USD/to/INR
+	//request -> org.springframework.cloud.netflix.zuul.filters.pre.Servlet30RequestWrapper@4cccc82 request uri -> /currency-exchange-service/currency-exchange/from/USD/to/INR
 
 	@Override
 	public String filterType() {
