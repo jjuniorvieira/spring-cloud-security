@@ -23,6 +23,7 @@ public class LimitsConfigurationController {
 	@GetMapping("/fault-tolerance-example")
 	@HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration")
 	public LimitConfiguration retrieveConfiguration() {
+		//if this service is not available the method fallbackRetrieveConfiguration will be called
 		throw new RuntimeException("Not available");
 	}
 
